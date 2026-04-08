@@ -94,7 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Check if cart is empty
             if (typeof cart !== 'undefined' && cart.length === 0) {
-                showToast('Te rog să adaugi produse în coș înainte de a trimite comanda!', 'warning');
+                if (typeof showToast === 'function') {
+                    showToast('Te rog să adaugi produse în coș înainte de a trimite comanda!', 'warning');
+                } else {
+                    alert('Te rog să adaugi produse în coș înainte de a trimite comanda!');
+                }
                 return;
             }
 
@@ -103,44 +107,77 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = '<div class="spinner"></div> Se trimite...';
             submitBtn.disabled = true;
 
-            // Prepare form data
-            const formData = new FormData(orderForm);
+            // Folosim FormData - acesta este formatul corect pentru Web3Forms
+            const formData = new FormData();
 
-            // Add cart data
-            if (typeof cart !== 'undefined') {
-                const cartText = cart.map(item =>
+            // Adăugăm TOATE câmpurile necesare
+            formData.append('access_key', 'a05ac018-7afb-4f4d-abbe-364866f11acd');
+            formData.append('name', document.querySelector('[name="name"]').value);
+            formData.append('phone', document.querySelector('[name="phone"]').value);
+            formData.append('email', document.querySelector('[name="email"]').value);
+            formData.append('address', document.querySelector('[name="address"]').value);
+            formData.append('subject', 'Comandă nouă - GOLDENVETIA');
+            formData.append('from_name', 'GOLDENVETIA Website');
+            formData.append('botcheck', '');
+
+            // Construim mesajul cu datele din coș
+            let cartText = '';
+            let totalAmount = 0;
+
+            if (typeof cart !== 'undefined' && cart.length > 0) {
+                cartText = cart.map(item =>
                     `${item.name} (${item.color}, ${item.size}) x ${item.quantity} = ${item.price * item.quantity} MDL`
                 ).join('\n');
-                formData.append('cart_summary', cartText);
-                formData.append('total_amount', `${calculateTotal()} MDL`);
+                if (typeof calculateTotal === 'function') {
+                    totalAmount = calculateTotal();
+                }
             }
 
-            // Web3Forms configuration - replace with your actual access key
-            const accessKey = 'YOUR_WEB3FORMS_ACCESS_KEY'; // Client will need to register at https://web3forms.com/
-            formData.append('access_key', accessKey);
+            const userMessage = document.querySelector('[name="message"]').value;
+            const fullMessage = `${userMessage}\n\n📦 COMANDA:\n${cartText}\n\n💰 TOTAL: ${totalAmount} MDL`;
+            formData.append('message', fullMessage);
 
             try {
+                // NU setăm manual Content-Type - browser-ul o face automat pentru FormData
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: formData
+                    body: formData  // ← Important: trimitem FormData, nu JSON
                 });
 
                 const result = await response.json();
 
                 if (result.success) {
-                    showToast('Comanda ta a fost trimisă cu succes! Vom reveni în curând.', 'success');
+                    if (typeof showToast === 'function') {
+                        showToast('Comanda ta a fost trimisă cu succes! Vom reveni în curând.', 'success');
+                    } else {
+                        alert('Comanda a fost trimisă cu succes!');
+                    }
                     orderForm.reset();
                     // Clear cart after successful order
-                    if (typeof cart !== 'undefined') {
+                    if (typeof cart !== 'undefined' && typeof saveCart === 'function') {
                         cart.length = 0;
                         saveCart();
                     }
-                    closeCart();
+                    if (typeof closeCart === 'function') {
+                        closeCart();
+                    }
                 } else {
-                    throw new Error('Submission failed');
+                    console.error('Web3Forms error:', result);
+                    let errorMessage = 'A apărut o eroare: ';
+                    errorMessage += result.message || 'Încearcă din nou';
+                    if (typeof showToast === 'function') {
+                        showToast(errorMessage, 'error');
+                    } else {
+                        alert(errorMessage);
+                    }
                 }
             } catch (error) {
-                showToast('A apărut o eroare. Te rugăm să încerci din nou.', 'error');
+                console.error('Form submission error:', error);
+                if (typeof showToast === 'function') {
+                    showToast('Eroare de conexiune. Te rugăm să încerci din nou.', 'error');
+                } else {
+                    alert('Eroare de conexiune. Te rugăm să încerci din nou.');
+                }
             } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
