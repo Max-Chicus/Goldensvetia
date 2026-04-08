@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="GOLDENVETIA - Mănuși de nitril premium Easy Care Zarys. Confort maxim, mărimi XS-XL, culori albastru și negru.">
+        <title>GOLDENVETIA - Mănuși de Nitril Premium</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/jpg" href="assets/images/logo-1.jpg">
+        <link rel="apple-touch-icon" href="assets/images/logo-1.jpg">
+
+        <!-- Alternative favicon formats for better compatibility -->
+        <link rel="shortcut icon" type="image/jpg"
+            href="assets/images/logo-1.jpg">
+
+        <!-- Tailwind CSS v3 (modern) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+        <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    </head>
+    <body class="bg-gray-50">
+
+        <!-- Header Section -->
+        <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+            <nav class="container mx-auto px-4 sm:px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center">
+                            <img
+                                src="/assets/images/logo-2.jpeg"
+                                alt="GOLDENSVETIA"
+                                class="w-full h-full object-contain scale-125">
+                        </div>
+                        <div>
+                            <h1
+                                class="text-xl font-bold text-blue-900">GOLDENVETIA</h1>
+                            <p class="text-xs text-gray-500">Easy Care Zarys</p>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex gap-8">
+                        <a href="#home"
+                            class="text-gray-600 hover:text-blue-900 transition font-medium">Acasă</a>
+                        <a href="#products"
+                            class="text-gray-600 hover:text-blue-900 transition font-medium">Produse</a>
+                        <a href="#features"
+                            class="text-gray-600 hover:text-blue-900 transition font-medium">Caracteristici</a>
+                        <a href="#sizing"
+                            class="text-gray-600 hover:text-blue-900 transition font-medium">Ghid
+                            Mărimi</a>
+                        <a href="#contact"
+                            class="text-gray-600 hover:text-blue-900 transition font-medium">Contact</a>
+                    </div>
+
+                    <!-- Right side buttons: Cart + Burger -->
+                    <div class="flex items-center gap-3">
+                        <!-- Cart Button -->
+                        <button
+                            class="cart-btn relative bg-gray-100 rounded-full p-2 hover:shadow-md transition">
+                            <i
+                                class="fas fa-shopping-cart text-gray-700 text-xl"></i>
+                            <span
+                                class="cart-count absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                        </button>
+
+                        <!-- Burger Menu Button (mobile only) -->
+                        <button id="burger-btn"
+                            class="md:hidden bg-gray-100 rounded-lg p-2 hover:bg-gray-200 transition">
+                            <i class="fas fa-bars text-gray-700 text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu (hidden by default) -->
+                <div id="mobile-menu"
+                    class="hidden md:hidden mt-4 pb-2 border-t border-gray-100">
+                    <div class="flex flex-col gap-3 pt-4">
+                        <a href="#home"
+                            class="mobile-nav-link text-gray-600 hover:text-blue-900 transition font-medium py-2 px-3 hover:bg-gray-50 rounded-lg">Acasă</a>
+                        <a href="#products"
+                            class="mobile-nav-link text-gray-600 hover:text-blue-900 transition font-medium py-2 px-3 hover:bg-gray-50 rounded-lg">Produse</a>
+                        <a href="#features"
+                            class="mobile-nav-link text-gray-600 hover:text-blue-900 transition font-medium py-2 px-3 hover:bg-gray-50 rounded-lg">Caracteristici</a>
+                        <a href="#sizing"
+                            class="mobile-nav-link text-gray-600 hover:text-blue-900 transition font-medium py-2 px-3 hover:bg-gray-50 rounded-lg">Ghid
+                            Mărimi</a>
+                        <a href="#contact"
+                            class="mobile-nav-link text-gray-600 hover:text-blue-900 transition font-medium py-2 px-3 hover:bg-gray-50 rounded-lg">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home"
+            class="relative pt-32 pb-20 overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/hero-bg.webp"
+                    alt="Hero Background"
+                    class="w-full h-full object-cover object-center">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/90"></div>
+            </div>
+
+            <div class="relative z-10 container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div
+                        class="inline-block bg-white/20 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+                        <span class="text-white text-sm font-medium">
+                            <i
+                                class="fas fa-certificate text-orange-400 mr-2"></i>
+                            Calitate Profesională
+                        </span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">
+                        Mănuși de Nitril
+                    </h1>
+                    <h2
+                        class="text-4xl md:text-5xl font-bold text-orange-400 mb-6">
+                        Premium Confort
+                    </h2>
+
+                    <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                        Protecție superioară cu confort maxim. Disponibile în
+                        albastru și negru, mărimi XS până la XL.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#products"
+                            class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition shadow-lg">
+                            <i class="fas fa-shopping-bag"></i>
+                            Explorează Produsele
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-3 rounded-full transition border border-white/30 backdrop-blur-sm">
+                            <i class="fas fa-headset"></i>
+                            Solicită Ofertă
+                        </a>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-white/20">
+                        <div>
+                            <div class="text-2xl font-bold text-white">5+</div>
+                            <div class="text-sm text-gray-300">Mărimi
+                                Disponibile</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">2</div>
+                            <div class="text-sm text-gray-300">Culori
+                                Premium</div>
+                        </div>
+                        <div>
+                            <div
+                                class="text-2xl font-bold text-white">100%</div>
+                            <div class="text-sm text-gray-300">Confort
+                                Garantat</div>
+                        </div>
+                        <div>
+                            <div
+                                class="text-2xl font-bold text-white">EN455</div>
+                            <div class="text-sm text-gray-300">Standard
+                                Calitate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">Produsele
+                        Noastre</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Mănuși de nitril
+                        de înaltă calitate, concepute pentru confort și
+                        protecție optimă</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+                    id="products-container"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">De ce să
+                        alegi GOLDENVETIA?</h2>
+                    <p class="text-gray-600">Calitate premium și confort
+                        superior pentru fiecare utilizator</p>
+                </div>
+                <div
+                    class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i
+                                class="fas fa-hand-peace text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Confort
+                            Maxim</h3>
+                        <p class="text-gray-600">Material moale și flexibil
+                            pentru utilizare prelungită</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i
+                                class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-blue-900 mb-2">Protecție
+                            Premium</h3>
+                        <p class="text-gray-600">Rezistență superioară la
+                            perforare și substanțe chimice</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i
+                                class="fas fa-ruler-combined text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Mărimi
+                            Variate</h3>
+                        <p class="text-gray-600">XS, S, M, L, XL - găsești
+                            mărimea perfectă</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-droplet text-white text-3xl"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-bold text-blue-900 mb-2">Rezistență
+                            la Lichide</h3>
+                        <p class="text-gray-600">Protecție excelentă împotriva
+                            lichidelor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sizing Guide -->
+        <section id="sizing" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-blue-900 mb-4">Ghid de
+                        Mărimi</h2>
+                    <p class="text-gray-600">Alege mărimea potrivită pentru
+                        confort optim</p>
+                </div>
+                <div
+                    class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div
+                        class="grid grid-cols-6 bg-blue-900 text-white font-bold">
+                        <div class="p-3 text-center">Mărime</div>
+                        <div class="p-3 text-center col-span-2">Circumferință
+                            Palmă</div>
+                        <div class="p-3 text-center col-span-2">Lungime
+                            Mână</div>
+                        <div class="p-3 text-center">Recomandare</div>
+                    </div>
+                    <div class="divide-y">
+                        <div class="grid grid-cols-6 hover:bg-gray-50">
+                            <div
+                                class="p-3 text-center font-bold text-blue-900">XS</div>
+                            <div class="p-3 text-center col-span-2">15-17
+                                cm</div>
+                            <div class="p-3 text-center col-span-2">16-18
+                                cm</div>
+                            <div class="p-3 text-center text-sm">Mâini
+                                mici</div>
+                        </div>
+                        <div class="grid grid-cols-6 hover:bg-gray-50">
+                            <div
+                                class="p-3 text-center font-bold text-blue-900">S</div>
+                            <div class="p-3 text-center col-span-2">17-19
+                                cm</div>
+                            <div class="p-3 text-center col-span-2">17-19
+                                cm</div>
+                            <div class="p-3 text-center text-sm">Mâini
+                                medii-mici</div>
+                        </div>
+                        <div class="grid grid-cols-6 hover:bg-gray-50">
+                            <div
+                                class="p-3 text-center font-bold text-blue-900">M</div>
+                            <div class="p-3 text-center col-span-2">19-21
+                                cm</div>
+                            <div class="p-3 text-center col-span-2">18-20
+                                cm</div>
+                            <div class="p-3 text-center text-sm">Mâini
+                                medii</div>
+                        </div>
+                        <div class="grid grid-cols-6 hover:bg-gray-50">
+                            <div
+                                class="p-3 text-center font-bold text-blue-900">L</div>
+                            <div class="p-3 text-center col-span-2">21-23
+                                cm</div>
+                            <div class="p-3 text-center col-span-2">19-21
+                                cm</div>
+                            <div class="p-3 text-center text-sm">Mâini
+                                mari</div>
+                        </div>
+                        <div class="grid grid-cols-6 hover:bg-gray-50">
+                            <div
+                                class="p-3 text-center font-bold text-blue-900">XL</div>
+                            <div class="p-3 text-center col-span-2">23-25
+                                cm</div>
+                            <div class="p-3 text-center col-span-2">20-22
+                                cm</div>
+                            <div class="p-3 text-center text-sm">Mâini foarte
+                                mari</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2
+                            class="text-4xl font-bold text-blue-900 mb-4">Completează
+                            Comanda</h2>
+                        <p class="text-gray-600">Completează formularul și vom
+                            reveni cu oferta personalizată</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <form id="order-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <input type="text" name="name"
+                                    placeholder="Nume complet *" required
+                                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                                <input type="tel" name="phone"
+                                    placeholder="Telefon *" required
+                                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <input type="email" name="email"
+                                    placeholder="Email"
+                                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                                <input type="text" name="address"
+                                    placeholder="Adresă livrare *" required
+                                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900">
+                            </div>
+                            <textarea name="message" rows="4"
+                                placeholder="Observații suplimentare"
+                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-900"></textarea>
+                            <input type="hidden" name="access_key"
+                                value="YOUR_WEB3FORMS_ACCESS_KEY">
+                            <input type="hidden" name="subject"
+                                value="Comandă GOLDENVETIA">
+                            <input type="hidden" name="cart_data"
+                                id="cart-data-input">
+
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h3 class="font-bold text-blue-900 mb-2">📦
+                                    Comanda ta:</h3>
+                                <div id="order-summary"
+                                    class="text-sm text-gray-600"></div>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded-lg transition">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Trimite Comanda
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="py-16 bg-gradient-to-r from-blue-50 to-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-10">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-blue-900 mb-3">Conectează-te
+                        cu noi</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Urmărește-ne pe
+                        rețelele sociale sau contactează-ne direct pentru
+                        comenzi și întrebări</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/373XXXXXXXXX" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group bg-white hover:bg-green-500 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 w-32 md:w-36 text-center transform hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-green-100 group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-3 transition-all">
+                            <i
+                                class="fab fa-whatsapp text-4xl text-green-600 group-hover:text-green-600"></i>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-700 group-hover:text-white transition-colors">WhatsApp</span>
+                    </a>
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/goldenvetia" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group bg-white hover:bg-blue-500 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 w-32 md:w-36 text-center transform hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-blue-100 group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-3 transition-all">
+                            <i
+                                class="fab fa-telegram text-4xl text-blue-500 group-hover:text-blue-500"></i>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-700 group-hover:text-white transition-colors">Telegram</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/goldenvetia" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group bg-white hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-orange-500 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 w-32 md:w-36 text-center transform hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-pink-100 group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-3 transition-all">
+                            <i
+                                class="fab fa-instagram text-4xl text-pink-600 group-hover:text-pink-600"></i>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-700 group-hover:text-white transition-colors">Instagram</span>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/goldenvetia" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group bg-white hover:bg-blue-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 w-32 md:w-36 text-center transform hover:scale-105">
+                        <div
+                            class="w-16 h-16 bg-blue-100 group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-3 transition-all">
+                            <i
+                                class="fab fa-facebook-f text-4xl text-blue-600 group-hover:text-blue-600"></i>
+                        </div>
+                        <span
+                            class="font-semibold text-gray-700 group-hover:text-white transition-colors">Facebook</span>
+                    </a>
+                </div>
+
+                <!-- Quick Contact Note -->
+                <div class="text-center mt-10 pt-6 border-t border-gray-200">
+                    <p class="text-gray-500 text-sm">
+                        <i class="fas fa-clock mr-2"></i>
+                        Răspundem în maxim 24 de ore
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+                                <img
+                                    src="/assets/images/logo-2.jpeg"
+                                    alt="GOLDENSVETIA"
+                                    class="w-full h-full object-contain scale-125">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">GOLDENVETIA</h3>
+                                <p class="text-xs text-gray-400">Easy Care
+                                    Zarys</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm">Mănuși de nitril
+                            premium pentru protecție și confort maxim.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Link-uri rapide</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#home"
+                                    class="hover:text-orange-400">Acasă</a></li>
+                            <li><a href="#products"
+                                    class="hover:text-orange-400">Produse</a></li>
+                            <li><a href="#features"
+                                    class="hover:text-orange-400">Caracteristici</a></li>
+                            <li><a href="#contact"
+                                    class="hover:text-orange-400">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Produse</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>Mănuși Nitril Albastre</li>
+                            <li>Mănuși Nitril Negre</li>
+                            <li>Mărimi XS - XL</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><i class="fas fa-phone mr-2"></i> +373 xxx xxx
+                                xxx</li>
+                            <li><i class="fas fa-envelope mr-2"></i>
+                                contact@goldenvetia.md</li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                    <p>&copy; 2024 GOLDENVETIA | Brand: Easy Care Zarys</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Cart Sidebar -->
+        <div id="cart-sidebar"
+            class="fixed top-0 right-0 w-full max-w-md h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+            <div class="flex flex-col h-full">
+                <div class="flex justify-between items-center p-6 border-b">
+                    <h2 class="text-2xl font-bold text-blue-900">Coșul tău</h2>
+                    <button id="close-cart"
+                        class="text-gray-500 text-2xl">&times;</button>
+                </div>
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6"></div>
+                <div class="border-t p-6">
+                    <div class="flex justify-between mb-4">
+                        <span class="font-bold">Total:</span>
+                        <span id="cart-total"
+                            class="text-2xl font-bold text-blue-900">0
+                            MDL</span>
+                    </div>
+                    <button id="checkout-btn"
+                        class="w-full bg-blue-900 text-white font-bold py-3 rounded-lg">Completează
+                        Comanda</button>
+                </div>
+            </div>
+        </div>
+        <div id="cart-overlay"
+            class="fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-40"></div>
+
+        <script src="js/products-data.js"></script>
+        <script src="js/cart.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Modal pentru Galerie -->
+        <div id="gallery-modal"
+            class="fixed inset-0 bg-black/90 z-[60] hidden items-center justify-center p-4">
+            <div
+                class="relative max-w-5xl w-full bg-white rounded-2xl overflow-hidden">
+                <!-- Close button -->
+                <button id="close-modal"
+                    class="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center z-10 transition">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+
+                <!-- Main image container - modificat pentru imagine mai mică -->
+                <div
+                    class="relative bg-gray-900 flex items-center justify-center min-h-[50vh] py-8">
+                    <img id="modal-main-img" alt="Product image"
+                        class="max-h-[70vh] max-w-[90%] object-contain">
+
+                    <!-- Navigation arrows -->
+                    <button id="prev-img"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center transition">
+                        <i class="fas fa-chevron-left text-xl"></i>
+                    </button>
+                    <button id="next-img"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/70 rounded-full w-10 h-10 flex items-center justify-center transition">
+                        <i class="fas fa-chevron-right text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Thumbnail gallery -->
+                <div id="modal-thumbnails"
+                    class="flex gap-2 p-4 overflow-x-auto bg-gray-100">
+                    <!-- Thumbnails will be inserted here -->
+                </div>
+
+                <!-- Product info -->
+                <div class="p-4 border-t">
+                    <h3 id="modal-product-name"
+                        class="text-xl font-bold text-blue-900"></h3>
+                    <p id="modal-product-desc"
+                        class="text-gray-600 text-sm"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
