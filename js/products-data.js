@@ -5,8 +5,8 @@ const productsData = [
         name: "Mănuși de Nitril Albastre",
         color: "Albastru",
         colorCode: "blue",
-        price: 89,
-        priceUnit: "MDL",
+        price: 16,
+        priceUnit: "RON",
         description: "Mănuși de nitril premium de culoare albastră, confort sporit pentru utilizare prelungită. Ideal pentru domeniul medical și industrial.",
         image: "assets/images/albastre/principala-albastru.jpeg",
         placeholderImage: "https://placehold.co/600x400/1e3a8a/white?text=Mănuși+Albastre+Easy+Care+Zarys",
@@ -24,8 +24,8 @@ const productsData = [
         name: "Mănuși de Nitril Negre",
         color: "Negru",
         colorCode: "black",
-        price: 99,
-        priceUnit: "MDL",
+        price: 18,
+        priceUnit: "RON",
         description: "Mănuși de nitril de culoare neagră, design elegant și profesional. Oferă protecție superioară și confort excelent.",
         image: "assets/images/negre/principala-negru.jpeg",
         placeholderImage: "https://placehold.co/600x400/1f2937/white?text=Mănuși+Negre+Easy+Care+Zarys",
@@ -67,7 +67,7 @@ function renderProducts() {
                     <h3 class="text-2xl font-bold text-blue-900">${product.name}</h3>
                     <div class="text-right">
                         <span class="text-2xl font-bold text-orange-500">${product.price}</span>
-                        <span class="text-gray-500">/${product.priceUnit}</span>
+                        <span class="text-gray-500">/${product.priceUnit}+TVA</span>
                     </div>
                 </div>
                 <p class="text-gray-600 mb-4">${product.description}</p>

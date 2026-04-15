@@ -151,3 +151,30 @@
     background: #1e3a8a;
     border-radius: 3px;
 }
+
+/* Free Shipping Animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Free shipping badge in cart */
+#free-shipping-badge {
+    transition: all 0.3s ease;
+}
+
+#free-shipping-badge:not(.hidden) {
+    display: inline-flex;
+    animation: slideIn 0.5s ease-out;
+}

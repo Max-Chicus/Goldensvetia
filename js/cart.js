@@ -55,6 +55,29 @@ function calculateTotal() {
     return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
 
+// Check free shipping
+function checkFreeShipping() {
+    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+    const freeShippingMessage = document.getElementById('free-shipping-message');
+    
+    if (totalQuantity >= 10) {
+        if (freeShippingMessage) {
+            freeShippingMessage.innerHTML = '<i class="fas fa-check-circle text-green-500 mr-2"></i> ✅ Transport gratuit aplicat!';
+            freeShippingMessage.classList.add('text-green-600');
+            freeShippingMessage.classList.remove('text-gray-600');
+        }
+        return true;
+    } else {
+        if (freeShippingMessage) {
+            const remaining = 10 - totalQuantity;
+            freeShippingMessage.innerHTML = `<i class="fas fa-truck mr-2"></i> 🚚 Mai adaugă ${remaining} ${remaining === 1 ? 'cutie' : 'cutii'} pentru transport gratuit`;
+            freeShippingMessage.classList.remove('text-green-600');
+            freeShippingMessage.classList.add('text-gray-600');
+        }
+        return false;
+    }
+}
+
 // Update cart UI (sidebar and order summary)
 function updateCartUI() {
     // Update cart count badge
@@ -92,7 +115,7 @@ function updateCartUI() {
                                 </button>
                             </div>
                             <div class="text-right">
-                                <p class="font-bold text-orange-500">${item.price * item.quantity} MDL</p>
+                                <p class="font-bold text-orange-500">${item.price * item.quantity} RON</p>
                                 <button class="remove-item text-red-500 text-sm hover:text-red-700" data-index="${index}">
                                     <i class="fas fa-trash-alt"></i> Elimină
                                 </button>
@@ -133,8 +156,23 @@ function updateCartUI() {
     // Update cart total
     const cartTotalElement = document.getElementById('cart-total');
     if (cartTotalElement) {
-        cartTotalElement.textContent = `${calculateTotal()} MDL`;
+        cartTotalElement.textContent = `${calculateTotal()} RON`;
     }
+    
+    // Add free shipping info in cart sidebar (if not exists)
+    let shippingInfoDiv = document.getElementById('cart-shipping-info');
+    const cartFooter = document.querySelector('#cart-sidebar .border-t.p-6');
+    if (cartFooter && !shippingInfoDiv) {
+        const infoDiv = document.createElement('div');
+        infoDiv.id = 'cart-shipping-info';
+        infoDiv.className = 'mb-4 p-3 bg-green-50 rounded-lg text-sm';
+        infoDiv.innerHTML = '<div id="free-shipping-message"><i class="fas fa-truck mr-2"></i> Adaugă produse pentru transport gratuit</div>';
+        cartFooter.insertBefore(infoDiv, cartFooter.firstChild);
+        shippingInfoDiv = document.getElementById('cart-shipping-info');
+    }
+    
+    // Check free shipping and update message
+    checkFreeShipping();
     
     // Update order summary in form
     updateOrderSummary();
@@ -150,10 +188,13 @@ function updateOrderSummary() {
             orderSummaryDiv.innerHTML = '<p class="text-gray-400 italic">Nu ai produse în coș. Adaugă produse pentru a comanda.</p>';
             if (cartDataInput) cartDataInput.value = '';
         } else {
+            const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+            const isFreeShipping = totalQuantity >= 10;
+            
             const summaryHtml = cart.map(item => `
                 <div class="flex justify-between text-sm">
                     <span>${item.name} (${item.color}, ${item.size}) x ${item.quantity}</span>
-                    <span class="font-semibold">${item.price * item.quantity} MDL</span>
+                    <span class="font-semibold">${item.price * item.quantity} RON</span>
                 </div>
             `).join('');
             
@@ -162,16 +203,18 @@ function updateOrderSummary() {
                 <div class="border-t pt-2 mt-2">
                     <div class="flex justify-between font-bold">
                         <span>Total:</span>
-                        <span class="text-orange-500">${calculateTotal()} MDL</span>
+                        <span class="text-orange-500">${calculateTotal()} RON</span>
                     </div>
+                    ${isFreeShipping ? '<div class="text-green-600 text-sm mt-2"><i class="fas fa-check-circle"></i> Transport gratuit inclus!</div>' : ''}
                 </div>
             `;
             
             if (cartDataInput) {
                 const cartText = cart.map(item => 
-                    `${item.name} - Culoare: ${item.color}, Mărime: ${item.size}, Cantitate: ${item.quantity}, Preț: ${item.price * item.quantity} MDL`
+                    `${item.name} - Culoare: ${item.color}, Mărime: ${item.size}, Cantitate: ${item.quantity}, Preț: ${item.price * item.quantity} RON`
                 ).join('\n');
-                cartDataInput.value = `Comandă GOLDENVETIA:\n${cartText}\nTotal: ${calculateTotal()} MDL`;
+                const freeShippingText = totalQuantity >= 10 ? '\n\n🚚 TRANSPORT GRATUIT aplicat!' : '';
+                cartDataInput.value = `Comandă GOLDENVETIA:\n${cartText}\nTotal: ${calculateTotal()} RON${freeShippingText}`;
             }
         }
     }
